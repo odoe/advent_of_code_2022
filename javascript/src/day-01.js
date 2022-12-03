@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
 
-const data = readFileSync("../data/day1.txt", "utf8");
+const data = readFileSync("../data/day01.txt", "utf8");
 const lines = data.split("\n");
 
 const calories = [];
