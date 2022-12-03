@@ -16,7 +16,7 @@ func check(e error) {
 }
 
 func main() {
-	f, err := os.ReadFile("../data/day1.txt")
+	f, err := os.ReadFile("../data/day01.txt")
 	check(err)
 
 	lines := string(f)

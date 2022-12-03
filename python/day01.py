@@ -1,6 +1,6 @@
 
 
-with open('../data/day1.txt') as f:
+with open('../data/day01.txt') as f:
     data = f.read().splitlines()
 
     total = 0
