@@ -9,30 +9,27 @@ function findValue(s) {
 }
 
 function sharedChars(a, b) {
-  for(let i = 0, len = a.length; i < len; ++i) {
-    if(b.indexOf(a[i]) > -1) {
+  for (let i = 0, len = a.length; i < len; ++i) {
+    if (b.indexOf(a[i]) > -1) {
       return a[i];
     }
   }
 
-  return '';
+  return "";
 }
 
 function sharedChars2(a, b, c) {
   let vals = [a, b, c];
   vals.sort((x, y) => y.length - x.length);
-  let shared = '';
+  let shared = "";
   for (let i = 0; i < vals[0].length; ++i) {
     for (let j = 0; j < vals[1].length; ++j) {
-      for (let k = 0; k < vals[2].length; ++k) {
-        if (
-          vals[0][i].indexOf(vals[1][j]) > -1
-          &&
-          vals[0][i].indexOf(vals[2][k]) > -1
-        )
-        {
-          shared = vals[0][i];
-          return shared;
+      if (vals[0][i].indexOf(vals[1][j]) > -1) {
+        for (let k = 0; k < vals[2].length; ++k) {
+          if (vals[0][i].indexOf(vals[2][k]) > -1) {
+            shared = vals[0][i];
+            return shared;
+          }
         }
       }
     }
@@ -47,8 +44,8 @@ function roundOne(data) {
 
   while (lines.length) {
     const line = lines.shift();
-    const p1 = line.substring(0, line.length/2);
-    const p2 = line.substring(line.length/2);
+    const p1 = line.substring(0, line.length / 2);
+    const p2 = line.substring(line.length / 2);
     const common = sharedChars(p1, p2);
     total += findValue(common);
   }
