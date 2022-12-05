@@ -40,8 +40,7 @@ function sharedChars2(a, b, c) {
   return shared;
 }
 
-function roundOne() {
-  const data = readFileSync("../data/day03.txt", "utf8");
+function roundOne(data) {
   const lines = data.split("\n");
 
   let total = 0;
@@ -57,15 +56,7 @@ function roundOne() {
   console.log(`My total round one score: ${total}`);
 }
 
-function roundTwo() {
-  const data = readFileSync("../data/day03.txt", "utf8");
-//   const data = `vJrwpWtwJgWrhcsFMMfFFhFp
-// jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
-// PmmdzqPrVvPwwTWBwg
-// wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
-// ttgJtRGJQctTZtZT
-// CrZsJsPPZsGzwwsLwLmpwMDw`
-
+function roundTwo(data) {
   const lines = data.split("\n");
 
   let total = 0;
@@ -80,6 +71,12 @@ function roundTwo() {
 
   console.log(`My total round two score: ${total}`);
 }
-
-roundOne();
-roundTwo();
+const data = readFileSync("../data/day03.txt", "utf8");
+//   const data = `vJrwpWtwJgWrhcsFMMfFFhFp
+// jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
+// PmmdzqPrVvPwwTWBwg
+// wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
+// ttgJtRGJQctTZtZT
+// CrZsJsPPZsGzwwsLwLmpwMDw`
+roundOne(data);
+roundTwo(data);
