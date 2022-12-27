@@ -11,7 +11,7 @@ def part1():
 
         left = set(rucksack[:half])
         right = set(rucksack[half:])
-        
+
         for priority, char in enumerate(ascii_letters):
             if char in left and char in right:
                 total_sum += priority + 1

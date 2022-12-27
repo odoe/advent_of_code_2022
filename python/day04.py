@@ -35,7 +35,7 @@ def part2():
             pairs += 1
 
     print("Answer for part 2:", pairs)
-    
+
     f.close()
 
 part1()
