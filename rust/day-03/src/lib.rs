@@ -22,7 +22,7 @@ pub fn process_part2(input: &str) -> String {
     return result.to_string();
 }
 
-fn find_char_val(s &str) -> u32 {
+fn find_char_val(s: &str) -> u32 {
     let mut total = 0;
     for c in s.chars() {
         total = if c < 97 {
@@ -34,7 +34,7 @@ fn find_char_val(s &str) -> u32 {
     total
 }
 
-fn shared_chars(a &str, b &str) -> str {}
+fn shared_chars(a: &str, b: &str) -> str {}
 
 fn versus_one(input: Vec<&str>) -> u32 {}
 

@@ -1,11 +1,8 @@
-use std::ops::{RangeInclusive};
 use nom::{
-    bytes::complete::tag,
-    character::complete::{newline},
-    multi::separated_list1,
-    sequence::separated_pair,
-    *,
+    bytes::complete::tag, character::complete::newline, multi::separated_list1,
+    sequence::separated_pair, *,
 };
+use std::ops::RangeInclusive;
 
 fn sections(input: &str) -> IResult<&str, RangeInclusive<u32>> {
     let (input, start) = nom::character::complete::u32(input)?;
@@ -21,19 +18,14 @@ fn line(input: &str) -> IResult<&str, (RangeInclusive<u32>, RangeInclusive<u32>)
 
 fn section_assignments(
     input: &str,
-) -> IResult<
-    &str,
-    Vec<(RangeInclusive<u32>, RangeInclusive<u32>)>,
-> {
-    let (input, ranges) =
-        separated_list1(newline, line)(input)?;
+) -> IResult<&str, Vec<(RangeInclusive<u32>, RangeInclusive<u32>)>> {
+    let (input, ranges) = separated_list1(newline, line)(input)?;
 
     Ok((input, ranges))
 }
 
 pub fn process_part1(input: &str) -> String {
-    let (_, assignments) =
-        section_assignments(input).unwrap();
+    let (_, assignments) = section_assignments(input).unwrap();
     let result = assignments
         .iter()
         .filter(|(range_a, range_b)| {
@@ -52,8 +44,7 @@ pub fn process_part1(input: &str) -> String {
 }
 
 pub fn process_part2(input: &str) -> String {
-    let (_, assignments) =
-        section_assignments(input).unwrap();
+    let (_, assignments) = section_assignments(input).unwrap();
     let result = assignments
         .iter()
         .filter(|(range_a, range_b)| {

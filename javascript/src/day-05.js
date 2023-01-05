@@ -31,7 +31,6 @@ function roundOne(data) {
         const to = moves[moves.length - 1];
         for (let i = 0; i < count; ++i) {
             let item = stacks[from - 1].shift();
-
             stacks[to - 1].unshift(item);
         }
     }
