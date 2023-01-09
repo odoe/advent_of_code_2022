@@ -1,5 +1,8 @@
 import { readFileSync } from "fs";
 
+/**
+* @param {string} data
+**/
 function roundOne(data) {
     const lines = data.split("\n");
 
@@ -31,6 +34,9 @@ function roundOne(data) {
     console.log(`My total round one score: ${total}`);
 }
 
+/**
+* @param {string} data
+**/
 function roundTwo(data) {
     const lines = data.split("\n");
 
